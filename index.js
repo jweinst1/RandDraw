@@ -11,11 +11,12 @@ var rand_color = function () {
 };
 //gives some random, of a rand color between a height and width
 var rand_path = function (h, w) {
-    var path_str = 'M0 0';
+    var path_str = "M" + rand_num(0, h) + " " + rand_num(0, w);
     for (var i = 0; i < 10; i++) {
         path_str += " H " + rand_num(0, h);
         path_str += " V " + rand_num(0, w);
     }
+    path_str += 'Z';
     return "<path d=\"" + path_str + "\" fill=\"transparent\" stroke=\"" + rand_color() + "\"/>";
 };
 //makes an entire drawing of some number of paths

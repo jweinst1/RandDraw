@@ -14,11 +14,12 @@ let rand_color = () => {
 
 //gives some random, of a rand color between a height and width
 let rand_path = (h, w) => {
-    let path_str = 'M0 0';
+    let path_str = `M${rand_num(0, h)} ${rand_num(0, w)}`;
     for(let i=0;i<10;i++){
         path_str += ` H ${rand_num(0, h)}`;
         path_str += ` V ${rand_num(0, w)}`;
     }
+    path_str += 'Z';
     return `<path d="${path_str}" fill="transparent" stroke="${rand_color()}"/>`
 };
 
